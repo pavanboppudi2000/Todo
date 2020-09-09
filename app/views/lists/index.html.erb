@@ -1,0 +1,30 @@
+<h2>Tasks of High Priority</h2>
+<% @list.each do |list| %>
+    <% if list.priority==="high" %>
+         <p> Title: <%= list.title %> </p> 
+        <p> Note: <%= list.note %><p>
+        <p> Due Date: <%= list.due %></p>
+        <%= link_to "Edit", edit_list_path(list) %>
+        <%= link_to "Delete", list_path(list), method: :delete, data: {confirm: 'You are to delete a task?' } %>
+    <% end %>
+<% end %>
+<h2>Tasks of Medium Priority</h2>
+<% @list.each do |list| %>
+   <% if list.priority==="medium" %>
+   <p> Title: <%= list.title %> </p> 
+   <p> Note: <%= list.note %><p>
+   <p> Due Date: <%= list.due %></p>
+   <%= link_to "Edit", edit_list_path(list) %>  
+   <%= link_to "Delete", list_path(list), method: :delete, data: {confirm: 'You are to delete a task?' } %>      
+   <% end %>
+<% end %>
+<h2>Tasks of Low Priority</h2>
+<% @list.each do |list|  %>
+    <% if list.priority==="low" %>
+    <p> Title: <%= list.title %> </p> 
+    <p> Note: <%= list.note %><p>
+    <p> Due Date: <%= list.due %></p>
+    <%= link_to "Edit", edit_list_path(list) %>
+    <%= link_to "Delete", list_path(list), method: :delete, data: {confirm: 'You are to delete a task?' } %>
+    <% end %>
+<% end %> 
