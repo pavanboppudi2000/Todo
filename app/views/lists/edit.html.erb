@@ -1,5 +1,5 @@
-<h3>Add a new Task</h3>
-<%= form_for :list, url: lists_path do |f| %>
+<h3>Edit a Task</h3>
+<%= form_for :list, url: list_path(@list) , method: :patch do |f| %>
     <p>
         <%= f.label :Title %><br>
         <%= f.text_field :title %>
